@@ -16,5 +16,5 @@ async def get_proximies():
 
 
 @app.get("/proximies/{id}")
-async def get_proximie(id: int):
-    return {"proximie_id": id}
+async def get_proximie(proximie_id: int):
+    return {"proximie_id": proximie_id}
