@@ -3,10 +3,10 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-proximies = []
+proximizes = []
 
 
-class Proximie(BaseModel):
+class Proximize(BaseModel):
     name: str
     description: str
 
@@ -16,16 +16,16 @@ async def root():
     return {"message": "Hello World!"}
 
 
-@app.get("/proximies/")
+@app.get("/proximizes/")
 async def get_proximies():
-    return {"list of proximies": proximies}
+    return {"list of proximizes": proximizes}
 
 
 @app.post("/proximies/")
-async def create_proximie(new_proximise: Proximie):
-    return new_proximise
+async def create_proximie(new_proximize: Proximize):
+    return new_proximize
 
 
-@app.get("/proximies/{id}")
-async def get_proximie(proximie_id: int):
-    return {"proximie_id": proximie_id}
+@app.get("/proximizes/{id}")
+async def get_proximie(proximize_id: int):
+    return {"proximie_id": proximize_id}
